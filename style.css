@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   font-family: "inter", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
 }
-/* typography */
+/* typography styling below this line... */
 
 :root {
   --color-primary: #2584ff;
@@ -61,7 +64,7 @@ h3 {
   }
 }
 
-/* links sytling*/
+/* links sytling below this line... */
 
 a {
   text-decoration: none;
@@ -90,7 +93,7 @@ a {
   }
 }
 
-/* badges */
+/* badges style below this line... */
 
 .badge {
   border-radius: 20px;
@@ -114,12 +117,126 @@ a {
   font-size: 1.6rem;
 }
 
-@media screen and (min-width: 1024px){
-    .badge{
-        font-size: 1.2rem;
-    }
+@media screen and (min-width: 1024px) {
+  .badge {
+    font-size: 1.2rem;
+  }
 
-    .badge--small {
-        font-size: 1.2rem;
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
+
+/* lists style below this line... */
+
+.list {
+  list-style: none;
+  color: var(--color-headings);
+}
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(icons/tick.svg);
+  padding-left: 3rem;
+}
+
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
+
+/* icons stylinf below this line... */
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+
+.icon-container {
+  background-color: #f3f9fa;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* buttons sytling below this line... */
+
+.btn {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 0;
+  padding: 2rem 3rem;
+  margin: 1rem 0;
+  border-radius: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4893f5;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #3fdcf8;
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: #fa542a;
+  color: white;
+}
+
+.btn-block {
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-outline{
+    background: white;
+    color: var(--color-headings);
+    border: 2px solid var(--color-headings);
+}
+
+.btn-outline:hover {
+    background: var(--color-headings);
+    color: white;
+}
+
+@media screen and (min-width : 1024px){
+    .btn {
+        font-size: 1.5rem;
     }
 }
